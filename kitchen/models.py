@@ -12,6 +12,8 @@ class DishType(models.Model):
 class Cook(AbstractUser):
     years_of_experience = models.PositiveIntegerField()
 
+    REQUIRED_FIELDS = ["years_of_experience"]
+
     def __str__(self) -> str:
         return (f"{self.username} (first_name={self.first_name}, last_name={self.last_name},"
                 f" years_of_experience={self.years_of_experience})")
