@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Our Dishes
+{% endblock %}
+
+{% block content %}
+
+  <div class="container dishes-page">
+
+    <div class="dishes-header">
+      <h1>Our Dishes</h1>
+      <p>Explore the dishes prepared by our kitchen</p>
+    </div>
+
+    <div class="row g-4">
+
+      {% for dish in dish_list %}
+
+        <div class="col-lg-4 col-md-6">
+
+          <div class="dish-card">
+
+            <div>
+              <p class="dish-type">
+                {{ dish.dish_type.name }}
+              </p>
+
+              <h2 class="dish-name">
+                {{ dish.name }}
+              </h2>
+
+              <p class="dish-description">
+                {{ dish.description }}
+              </p>
+            </div>
+
+            <div class="dish-footer">
+
+              <span class="dish-price">
+                ${{ dish.price }}
+              </span>
+
+              <a href="#" class="dish-details">
+                View details →
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      {% empty %}
+
+        <div class="col-12">
+          <p class="text-center">
+            There are no dishes yet.
+          </p>
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+{% endblock %}

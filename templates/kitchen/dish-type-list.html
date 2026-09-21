@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Dish Types
+{% endblock %}
+
+{% block content %}
+
+  <div class="container dish-types-page">
+
+    <div class="dish-types-header">
+      <h1>Dish Types</h1>
+      <p>Explore our dish categories</p>
+    </div>
+
+    <div class="row g-4">
+
+      {% for dish_type in dishtype_list %}
+
+        <div class="col-lg-4 col-md-6">
+
+          <div class="dish-type-card">
+
+            <h2>
+              {{ dish_type.name }}
+            </h2>
+
+            <a href="#" class="dish-type-details">
+              View dishes →
+            </a>
+
+          </div>
+
+        </div>
+
+      {% empty %}
+
+        <div class="col-12">
+          <p class="text-center">
+            There are no dish types yet.
+          </p>
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+{% endblock %}
