@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block content %}
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Restaurant Kitchen Service
+      </h1>
+
+      <p>
+        Welcome to the Restaurant Kitchen Service
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <div class="statistics">
+
+    <div class="row">
+
+      <div class="col-md-4 stat-item">
+
+        <div class="stat-number">
+          {{ num_dish_types }}
+        </div>
+
+        <div class="stat-title">
+          Dish Types
+        </div>
+
+        <p class="stat-description">
+          Different categories of dishes in our restaurant.
+        </p>
+
+      </div>
+
+
+      <div class="col-md-4 stat-item">
+
+        <div class="stat-number">
+          {{ num_dishes }}
+        </div>
+
+        <div class="stat-title">
+          Dishes
+        </div>
+
+        <p class="stat-description">
+          Delicious dishes prepared for our guests.
+        </p>
+
+      </div>
+
+
+      <div class="col-md-4 stat-item">
+
+        <div class="stat-number">
+          {{ num_cooks }}
+        </div>
+
+        <div class="stat-title">
+          Cooks
+        </div>
+
+        <p class="stat-description">
+          Professional cooks working in our kitchen.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}
