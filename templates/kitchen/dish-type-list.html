@@ -25,7 +25,7 @@
               {{ dish_type.name }}
             </h2>
 
-            <a href="#" class="dish-type-details">
+            <a href="{% url "kitchen:dish-type-dishes-list" dish_type.id %}" class="dish-type-details">
               View dishes →
             </a>
 

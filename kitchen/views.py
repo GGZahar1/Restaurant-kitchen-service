@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AbstractUser
+from django.db.models import QuerySet
 from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render
 from django.views import generic
@@ -22,10 +23,26 @@ class CookListView(generic.ListView):
     template_name = "kitchen/cook-list.html"
 
 
+class CookDetailView(generic.DetailView):
+    model = Cook
+    queryset = Cook.objects.prefetch_related("dishes")
+    template_name = "kitchen/cook-detail.html"
+
+
 class DishTypeListView(generic.ListView):
     model = DishType
     paginate_by = 6
     template_name = "kitchen/dish-type-list.html"
+
+
+class DishTypeDishListView(generic.ListView):
+    model = Dish
+    template_name = "kitchen/dish-type-dish-list.html"
+
+    def get_queryset(self) -> QuerySet:
+        return Dish.objects.filter(
+            dish_type_id=self.kwargs["pk"]
+        )
 
 
 class DishListView(generic.ListView):
@@ -38,9 +55,3 @@ class DishDetailView(generic.DetailView):
     model = Dish
     template_name = "kitchen/dish-detail.html"
     queryset = Dish.objects.select_related("dish_type").prefetch_related("cooks")
-
-
-class CookDetailView(generic.DetailView):
-    model = Cook
-    queryset = Cook.objects.prefetch_related("dishes")
-    template_name = "kitchen/cook-detail.html"
