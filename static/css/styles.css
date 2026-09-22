@@ -313,8 +313,29 @@ body {
 }
 
 .dishes-header {
+  position: relative;
   text-align: center;
   margin-bottom: 30px;
+}
+
+.create-dish-btn {
+  position: absolute;
+  right: 0;
+  top: 10px;
+
+  background-color: #9b6b43;
+  color: #fff;
+
+  padding: 9px 16px;
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.create-dish-btn:hover {
+  background-color: #70492d;
+  color: #fff;
 }
 
 .dishes-header h1 {
@@ -628,4 +649,126 @@ body {
 
 .cook-detail-actions {
   padding-top: 25px;
+}
+
+/* Dish Form */
+
+.dish-form-page {
+  max-width: 700px;
+  padding-top: 130px;
+  padding-bottom: 50px;
+}
+
+.dish-form-card {
+  background-color: #fff;
+  border-radius: 18px;
+  padding: 35px 40px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dish-form-header {
+  margin-bottom: 25px;
+}
+
+.dish-form-header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.dish-form-header p {
+  color: #777;
+  font-size: 14px;
+  margin: 0;
+}
+
+
+/* Form */
+
+.dish-form-card form p {
+  margin-bottom: 18px;
+}
+
+.dish-form-card label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.dish-form-card input,
+.dish-form-card textarea,
+.dish-form-card select {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+.dish-form-card textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.dish-form-card input:focus,
+.dish-form-card textarea:focus,
+.dish-form-card select:focus {
+  outline: none;
+  border-color: #9b6b43;
+}
+
+
+/* Actions */
+
+.dish-form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 30px;
+}
+
+.dish-submit {
+  background-color: #9b6b43;
+  color: #fff;
+}
+
+.dish-submit:hover {
+  background-color: #70492d;
+  color: #fff;
+}
+
+.dish-form-card #id_cooks div {
+  margin-bottom: 10px;
+}
+
+.dish-form-card #id_cooks label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.dish-form-card #id_cooks div {
+  margin-bottom: 10px;
+}
+
+.dish-form-card #id_cooks label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.dish-form-card #id_cooks input[type="checkbox"] {
+  width: auto;
+  margin: 0;
 }

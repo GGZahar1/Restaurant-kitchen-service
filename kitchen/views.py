@@ -3,8 +3,10 @@ from django.contrib.auth.models import AbstractUser
 from django.db.models import QuerySet
 from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
+from kitchen.forms import DishCreateForm
 from kitchen.models import Dish, DishType, Cook
 
 
@@ -55,3 +57,10 @@ class DishDetailView(generic.DetailView):
     model = Dish
     template_name = "kitchen/dish-detail.html"
     queryset = Dish.objects.select_related("dish_type").prefetch_related("cooks")
+
+
+class DishCreateView(generic.CreateView):
+    model = Dish
+    form_class = DishCreateForm
+    template_name = "kitchen/dish-from.html"
+    success_url = reverse_lazy("kitchen:dish-list")
