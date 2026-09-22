@@ -400,3 +400,232 @@ body {
 .dish-details:hover {
   color: #70492d;
 }
+
+/* Dish Detail */
+
+.dish-detail-page {
+  padding-top: 140px;
+  padding-bottom: 60px;
+  max-width: 900px;
+}
+
+.dish-detail-card {
+  background-color: #fff;
+  border-radius: 18px;
+  padding: 40px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dish-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.dish-detail-type {
+  color: #9b6b43;
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+.dish-detail-header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -1px;
+
+  margin: 0;
+}
+
+.dish-detail-price {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.dish-detail-section {
+  padding: 25px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.dish-detail-section h2 {
+  font-size: 17px;
+  font-weight: 600;
+
+  margin-bottom: 12px;
+}
+
+.dish-detail-section p {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* Cooks */
+
+.dish-cooks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dish-cook {
+  background-color: #f5f1eb;
+  color: #333;
+
+  padding: 8px 14px;
+  border-radius: 20px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.dish-cook:hover {
+  color: #9b6b43;
+}
+
+
+/* Actions */
+
+.dish-detail-actions {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 25px;
+}
+
+/* Cook Detail */
+
+.cook-detail-page {
+  padding-top: 140px;
+  padding-bottom: 60px;
+  max-width: 900px;
+}
+
+.cook-detail-card {
+  background-color: #fff;
+  border-radius: 18px;
+  padding: 40px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.cook-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.cook-detail-username {
+  color: #9b6b43;
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+.cook-detail-header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -1px;
+
+  margin: 0;
+}
+
+.cook-detail-experience {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.cook-detail-experience span {
+  color: #777;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.cook-detail-experience strong {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+/* Dishes */
+
+.cook-detail-section {
+  padding: 25px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cook-detail-section h2 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.cook-dishes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cook-dish {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #f5f1eb;
+
+  padding: 14px 18px;
+  border-radius: 12px;
+
+  color: #333;
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.cook-dish:hover {
+  transform: translateX(4px);
+  color: #9b6b43;
+}
+
+.cook-dish div {
+  display: flex;
+  flex-direction: column;
+}
+
+.cook-dish strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.cook-dish div span {
+  color: #777;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.cook-dish-price {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+/* Actions */
+
+.cook-detail-actions {
+  padding-top: 25px;
+}

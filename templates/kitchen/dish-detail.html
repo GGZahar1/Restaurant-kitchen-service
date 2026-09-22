@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{ dish.name }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="container dish-detail-page">
+
+    <div class="dish-detail-card">
+
+      <div class="dish-detail-header">
+
+        <div>
+          <p class="dish-detail-type">
+            {{ dish.dish_type.name }}
+          </p>
+
+          <h1>
+            {{ dish.name }}
+          </h1>
+        </div>
+
+        <span class="dish-detail-price">
+          ${{ dish.price }}
+        </span>
+
+      </div>
+
+      <div class="dish-detail-section">
+        <h2>Description</h2>
+
+        <p>
+          {{ dish.description }}
+        </p>
+      </div>
+
+      <div class="dish-detail-section">
+        <h2>Cooks</h2>
+
+        <div class="dish-cooks">
+
+          {% for cook in dish.cooks.all %}
+
+            <a href="{% url "kitchen:cook-detail" cook.id %}" class="dish-cook">
+              {{ cook.first_name }} {{ cook.last_name }}
+            </a>
+
+          {% empty %}
+
+            <p>No cooks are assigned to this dish.</p>
+
+          {% endfor %}
+
+        </div>
+      </div>
+
+      <div class="dish-detail-actions">
+
+        <a href="{% url "kitchen:dish-list" %}"
+           class="btn btn-outline-secondary">
+          Back
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}

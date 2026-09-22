@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{ cook.first_name }} {{ cook.last_name }}
+{% endblock %}
+
+{% block content %}
+  <div class="container cook-detail-page">
+    <div class="cook-detail-card">
+      <div class="cook-detail-header">
+        <div>
+          <p class="cook-detail-username">
+            @{{ cook.username }}
+          </p>
+          <h1>
+            {{ cook.first_name }} {{ cook.last_name }}
+          </h1>
+        </div>
+        <div class="cook-detail-experience">
+          <span>Experience</span>
+          <strong>
+            {{ cook.years_of_experience }} years
+          </strong>
+        </div>
+      </div>
+      <div class="cook-detail-section">
+        <h2>Dishes</h2>
+        <div class="cook-dishes">
+          {% for dish in cook.dishes.all %}
+            <a
+              href="{% url 'kitchen:dish-detail' pk=dish.pk %}"
+              class="cook-dish"
+            >
+              <div>
+                <strong>{{ dish.name }}</strong>
+                <span>
+                  {{ dish.dish_type.name }}
+                </span>
+              </div>
+              <span class="cook-dish-price">
+                ${{ dish.price }}
+              </span>
+            </a>
+          {% empty %}
+            <p>
+              This cook has no dishes yet.
+            </p>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="cook-detail-actions">
+        <a
+          href="{% url 'kitchen:cook-list' %}"
+          class="btn btn-outline-secondary"
+        >
+          Back
+        </a>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
