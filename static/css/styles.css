@@ -772,3 +772,36 @@ body {
   width: auto;
   margin: 0;
 }
+
+/* Delete Dish */
+
+.delete-page {
+  max-width: 650px;
+  padding-top: 160px;
+}
+
+.delete-card {
+  background-color: #fff;
+  border-radius: 18px;
+  padding: 40px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.delete-card h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.delete-card p {
+  color: #777;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.delete-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

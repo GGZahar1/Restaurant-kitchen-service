@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from kitchen.models import Dish
 
 
-class DishCreateForm(forms.ModelForm):
+class DishForm(forms.ModelForm):
     cooks = forms.ModelMultipleChoiceField(
         queryset=get_user_model().objects.all(),
         widget=forms.CheckboxSelectMultiple

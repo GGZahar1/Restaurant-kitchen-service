@@ -62,11 +62,16 @@
            class="btn btn-outline-secondary">
           Back
         </a>
-
+        <a href="{% url 'kitchen:dish-update' pk=dish.pk %}"
+           class="btn dish-submit">
+          Update
+        </a>
+        <a href="{% url 'kitchen:dish-delete' pk=dish.pk %}"
+          class="btn btn-danger ms-2">
+          Delete
+        </a>
       </div>
-
     </div>
-
   </div>
 
 {% endblock %}
