@@ -28,7 +28,7 @@
         <div class="cook-dishes">
           {% for dish in cook.dishes.all %}
             <a
-              href="{% url 'kitchen:dish-detail' pk=dish.pk %}"
+              href="{% url "kitchen:dish-detail" pk=dish.pk %}"
               class="cook-dish"
             >
               <div>
@@ -49,12 +49,26 @@
         </div>
       </div>
       <div class="cook-detail-actions">
-        <a
-          href="{% url 'kitchen:cook-list' %}"
-          class="btn btn-outline-secondary"
-        >
-          Back
+        <a href="{% url 'kitchen:cook-list' %}"
+          class="btn btn-outline-secondary">
+            Back
         </a>
+
+        <div>
+          <a
+            href="{% url 'kitchen:cook-update' pk=cook.pk %}"
+            class="btn dish-submit"
+          >
+            Update
+          </a>
+
+          <a
+            href="{% url 'kitchen:cook-delete' pk=cook.pk %}"
+            class="btn btn-danger ms-2"
+          >
+            Delete
+          </a>
+        </div>
       </div>
     </div>
   </div>

@@ -6,11 +6,16 @@
 
 {% block content %}
 
-  <div class="container cooks-page">
-
-    <div class="cooks-header">
-      <h1>Our Cooks</h1>
-      <p>Meet the team behind our kitchen</p>
+  <div class="container dish-types-page">
+    <div class="dish-types-header">
+      <div>
+        <h1>Our Cooks</h1>
+        <p>Meet the team behind our kitchen</p>
+      </div>
+      <a href="{% url "kitchen:cook-create" %}"
+        class="btn create-dish-type-btn">
+          + Create Cook
+      </a>
     </div>
 
     <div class="row g-4">
