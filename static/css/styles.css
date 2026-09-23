@@ -243,6 +243,7 @@ body {
 }
 
 .dish-types-header {
+  position: relative;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -804,4 +805,58 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.create-dish-type-btn {
+  position: absolute;
+  right: 0;
+  top: 10px;
+
+  background-color: #9b6b43;
+  color: #fff;
+
+  padding: 9px 16px;
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.create-dish-type-btn:hover {
+  background-color: #70492d;
+  color: #fff;
+}
+
+.dish-type-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dish-type-manage {
+  display: flex;
+  gap: 12px;
+}
+
+.dish-type-update,
+.dish-type-delete {
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dish-type-update {
+  color: #9b6b43;
+}
+
+.dish-type-update:hover {
+  color: #70492d;
+}
+
+.dish-type-delete {
+  color: #c65353;
+}
+
+.dish-type-delete:hover {
+  color: #963b3b;
 }

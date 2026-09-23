@@ -37,6 +37,26 @@ class DishTypeListView(generic.ListView):
     template_name = "kitchen/dish-type-list.html"
 
 
+class DishTypeCreateView(generic.CreateView):
+    model = DishType
+    template_name = "kitchen/dish-type-form.html"
+    success_url = reverse_lazy("kitchen:dish-type-list")
+    fields = "__all__"
+
+
+class DishTypeUpdateView(generic.UpdateView):
+    model = DishType
+    template_name = "kitchen/dish-type-form.html"
+    success_url = reverse_lazy("kitchen:dish-type-list")
+    fields = "__all__"
+
+
+class DishTypeDeleteView(generic.DeleteView):
+    model = DishType
+    template_name = "kitchen/dish-type-confirm-delete.html"
+    success_url = reverse_lazy("kitchen:dish-type-list")
+
+
 class DishTypeDishListView(generic.ListView):
     model = Dish
     template_name = "kitchen/dish-type-dish-list.html"

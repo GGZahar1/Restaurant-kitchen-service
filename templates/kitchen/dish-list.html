@@ -6,13 +6,11 @@
 
 {% block content %}
   <div class="container dishes-page">
-
     <div class="dishes-header">
       <div>
         <h1>Our Dishes</h1>
         <p>Explore the dishes prepared by our kitchen</p>
       </div>
-
       <a
         href="{% url 'kitchen:dish-create' %}"
         class="btn create-dish-btn"
@@ -20,31 +18,25 @@
         + Create Dish
       </a>
     </div>
-
     <div class="row g-4">
       {% for dish in dish_list %}
         <div class="col-lg-4 col-md-6">
           <div class="dish-card">
-
             <div>
               <p class="dish-type">
                 {{ dish.dish_type.name }}
               </p>
-
               <h2 class="dish-name">
                 {{ dish.name }}
               </h2>
-
               <p class="dish-description">
                 {{ dish.description }}
               </p>
             </div>
-
             <div class="dish-footer">
               <span class="dish-price">
                 ${{ dish.price }}
               </span>
-
               <a
                 href="{% url 'kitchen:dish-detail' dish.id %}"
                 class="dish-details"
@@ -52,20 +44,15 @@
                 View details →
               </a>
             </div>
-
           </div>
         </div>
-
       {% empty %}
-
         <div class="col-12">
           <p class="text-center">
             There are no dishes yet.
           </p>
         </div>
-
       {% endfor %}
     </div>
-
   </div>
 {% endblock %}
