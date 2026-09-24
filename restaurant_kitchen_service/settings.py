@@ -129,3 +129,6 @@ MAILERS = {
 }
 
 AUTH_USER_MODEL = "kitchen.Cook"
+
+LOGOUT_REDIRECT_URL = "login"
+LOGIN_REDIRECT_URL = "kitchen:home"

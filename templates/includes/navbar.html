@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg main-navbar">
   <div class="container">
 
-    <a class="navbar-brand fw-bold" href="{% url "kitchen:home" %}">
+    <a class="navbar-brand fw-bold" href="{% url 'kitchen:home' %}">
       Taste the Best
     </a>
 
@@ -12,34 +12,60 @@
       data-bs-target="#mainNavbar"
       aria-controls="mainNavbar"
       aria-expanded="false"
-      aria-label="Toggle navigation">
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
 
         <li class="nav-item">
-          <a class="nav-link" href="{% url "kitchen:home" %}">Home</a>
+          <a class="nav-link" href="{% url 'kitchen:home' %}">
+            Home
+          </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{% url "kitchen:cook-list" %}">
+          <a class="nav-link" href="{% url 'kitchen:cook-list' %}">
             All Cooks
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{% url "kitchen:dish-list" %}">
+          <a class="nav-link" href="{% url 'kitchen:dish-list' %}">
             All Dishes
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{% url "kitchen:dish-type-list" %}">
+          <a class="nav-link" href="{% url 'kitchen:dish-type-list' %}">
             All Dish Types
           </a>
         </li>
+
+        {% if user.is_authenticated %}
+          <li class="nav-item account-name">
+            <span class="nav-link">
+              {{ user.username }}
+            </span>
+          </li>
+
+          <li class="nav-item">
+            <form method="post" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button type="submit" class="nav-link logout-btn">
+                Logout
+              </button>
+            </form>
+          </li>
+        {% else %}
+          <li class="nav-item account-name">
+            <a class="nav-link" href="{% url 'login' %}">
+              Login
+            </a>
+          </li>
+        {% endif %}
 
       </ul>
     </div>
