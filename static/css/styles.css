@@ -963,3 +963,14 @@ body {
 .logout-btn:hover {
   color: #9b6b43 !important;
 }
+
+.dish-cooks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.dish-cooks-header h2 {
+  margin-bottom: 0;
+}

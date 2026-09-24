@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import AbstractUser
 from django.db.models import QuerySet
-from django.http import HttpResponse, HttpRequest
-from django.shortcuts import render
+from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -118,3 +118,16 @@ class DishDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Dish
     template_name = "kitchen/dish-confirm-delete.html"
     success_url = reverse_lazy("kitchen:dish-list")
+
+
+@login_required
+def toggle_assign_to_dish(request, pk):
+    cook = request.user
+    dish = Dish.objects.get(id=pk)
+
+    if dish in cook.dishes.all():
+        cook.dishes.remove(dish)
+    else:
+        cook.dishes.add(dish)
+
+    return redirect("kitchen:dish-detail", pk=pk)

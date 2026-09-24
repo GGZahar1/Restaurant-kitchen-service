@@ -5,71 +5,88 @@
 {% endblock %}
 
 {% block content %}
-
   <div class="container dish-detail-page">
-
     <div class="dish-detail-card">
-
       <div class="dish-detail-header">
-
         <div>
           <p class="dish-detail-type">
             {{ dish.dish_type.name }}
           </p>
-
           <h1>
             {{ dish.name }}
           </h1>
         </div>
-
         <span class="dish-detail-price">
           ${{ dish.price }}
         </span>
-
       </div>
-
       <div class="dish-detail-section">
         <h2>Description</h2>
-
         <p>
           {{ dish.description }}
         </p>
       </div>
-
       <div class="dish-detail-section">
-        <h2>Cooks</h2>
-
+        <div class="dish-cooks-header">
+          <h2>Cooks</h2>
+          {% if user.is_authenticated %}
+            <form
+              method="post"
+              action="{% url "kitchen:cook-toggle-dish" pk=dish.pk %}"
+            >
+              {% csrf_token %}
+              {% if dish in user.dishes.all %}
+                <button
+                  type="submit"
+                  class="btn btn-outline-danger btn-sm"
+                >
+                  Leave
+                </button>
+              {% else %}
+                <button
+                  type="submit"
+                  class="btn dish-submit btn-sm"
+                >
+                  Join
+                </button>
+              {% endif %}
+            </form>
+          {% endif %}
+        </div>
         <div class="dish-cooks">
-
           {% for cook in dish.cooks.all %}
-
-            <a href="{% url "kitchen:cook-detail" cook.id %}" class="dish-cook">
+            <a
+              href="{% url "kitchen:cook-detail" cook.id %}"
+              class="dish-cook"
+            >
               {{ cook.first_name }} {{ cook.last_name }}
             </a>
-
           {% empty %}
-
             <p>No cooks are assigned to this dish.</p>
-
           {% endfor %}
-
         </div>
       </div>
-
       <div class="dish-detail-actions">
-
-        <a href="{% url "kitchen:dish-list" %}"
-           class="btn btn-outline-secondary">
+        <a
+          href="{% url "kitchen:dish-list" %}"
+          class="btn btn-outline-secondary"
+        >
           Back
         </a>
-        <a href="{% url 'kitchen:dish-update' pk=dish.pk %}"
-           class="btn dish-submit">
-          Update
-        </a>
-        <a href="{% url 'kitchen:dish-delete' pk=dish.pk %}"
-          class="btn btn-danger ms-2">
-          Delete
-        </a>
+        <div>
+          <a
+            href="{% url "kitchen:dish-update" pk=dish.pk %}"
+            class="btn dish-submit"
+          >
+            Update
+          </a>
+          <a
+            href="{% url "kitchen:dish-delete" pk=dish.pk %}"
+            class="btn btn-danger ms-2"
+          >
+            Delete
+          </a>
+        </div>
       </div>
     </div>
   </div>
