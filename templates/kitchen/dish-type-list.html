@@ -11,12 +11,21 @@
         <h1>Dish Types</h1>
         <p>Explore our dish categories</p>
       </div>
-      <a href="{% url "kitchen:dish-type-create" %}"
-        class="btn create-dish-type-btn">
-          + Create Dish Type
+      <a
+        href="{% url "kitchen:dish-type-create" %}"
+        class="btn create-dish-type-btn"
+      >
+        + Create Dish Type
       </a>
     </div>
-
+    <form method="get" class="dish-search-form">
+      <div class="dish-search">
+        {{ search_form.name }}
+        <button type="submit" class="dish-search-btn">
+          Search
+        </button>
+      </div>
+    </form>
     <div class="row g-4">
       {% for dish_type in dishtype_list %}
         <div class="col-lg-4 col-md-6">
@@ -25,16 +34,23 @@
               {{ dish_type.name }}
             </h2>
             <div class="dish-type-actions">
-              <a href="{% url "kitchen:dish-type-dishes-list" dish_type.id %}" class="dish-type-details">
+              <a
+                href="{% url "kitchen:dish-type-dishes-list" dish_type.id %}"
+                class="dish-type-details"
+              >
                 View dishes →
               </a>
-
               <div class="dish-type-manage">
-                <a href="{% url "kitchen:dish-type-update" dish_type.id %}" class="dish-type-update">
+                <a
+                  href="{% url "kitchen:dish-type-update" dish_type.id %}"
+                  class="dish-type-update"
+                >
                   Update
                 </a>
-
-                <a href="{% url "kitchen:dish-type-delete" dish_type.id %}" class="dish-type-delete">
+                <a
+                  href="{% url "kitchen:dish-type-delete" dish_type.id %}"
+                  class="dish-type-delete"
+                >
                   Delete
                 </a>
               </div>

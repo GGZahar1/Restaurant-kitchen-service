@@ -9,7 +9,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
-from kitchen.forms import DishForm, CookForm, DishSearchForm
+from kitchen.forms import DishForm, CookForm, DishSearchForm, DishTypeSearchForm
 from kitchen.models import Dish, DishType, Cook
 
 
@@ -23,13 +23,13 @@ def index(request: HttpRequest) -> HttpResponse:
     return render(request, "kitchen/index.html", context=context)
 
 
-class CookListView(LoginRequiredMixin ,generic.ListView):
+class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
     paginate_by = 6
     template_name = "kitchen/cook-list.html"
 
 
-class CookDetailView(LoginRequiredMixin,generic.DetailView):
+class CookDetailView(LoginRequiredMixin, generic.DetailView):
     model = Cook
     queryset = Cook.objects.prefetch_related("dishes")
     template_name = "kitchen/cook-detail.html"
@@ -58,6 +58,24 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 6
     template_name = "kitchen/dish-type-list.html"
 
+    def get_context_data(self, **kwargs: Any) -> dict[str, any]:
+        context = super().get_context_data(**kwargs)
+
+        name = self.request.GET.get("name", "")
+        context["search_form"] = DishTypeSearchForm(
+            initial={"name": name}
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        form = DishTypeSearchForm(self.request.GET)
+        if form.is_valid():
+            queryset = DishType.objects.filter(
+                name__icontains=form.cleaned_data["name"]
+            )
+        return queryset
+
 
 class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
     model = DishType
@@ -76,7 +94,7 @@ class DishTypeUpdateView(LoginRequiredMixin, generic.UpdateView):
 class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = DishType
     template_name = "kitchen/dish-type-confirm-delete.html"
-    success_url = reverse_lazy("kitchen:dish-type-list  ")
+    success_url = reverse_lazy("kitchen:dish-type-list")
 
 
 class DishTypeDishListView(LoginRequiredMixin, generic.ListView):
