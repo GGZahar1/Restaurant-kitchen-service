@@ -1,14 +1,15 @@
+from typing import Any
+
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import AbstractUser
 from django.db.models import QuerySet
 from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
-from kitchen.forms import DishForm, CookForm
+from kitchen.forms import DishForm, CookForm, DishSearchForm
 from kitchen.models import Dish, DishType, Cook
 
 
@@ -92,6 +93,26 @@ class DishListView(LoginRequiredMixin, generic.ListView):
     model = Dish
     paginate_by = 6
     template_name = "kitchen/dish-list.html"
+    queryset = Dish.objects.select_related("dish_type")
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+
+        name = self.request.GET.get("name", "")
+        context["search_form"] = DishSearchForm(
+            initial={"name": name}
+        )
+
+        return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        form = DishSearchForm(self.request.GET)
+        if form.is_valid():
+            queryset = Dish.objects.filter(
+                name__icontains=form.cleaned_data["name"]
+            )
+        return queryset
 
 
 class DishDetailView(LoginRequiredMixin, generic.DetailView):

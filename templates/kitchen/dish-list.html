@@ -12,12 +12,20 @@
         <p>Explore the dishes prepared by our kitchen</p>
       </div>
       <a
-        href="{% url 'kitchen:dish-create' %}"
+        href="{% url "kitchen:dish-create" %}"
         class="btn create-dish-btn"
       >
         + Create Dish
       </a>
     </div>
+    <form method="get" class="dish-search-form">
+      <div class="dish-search">
+        {{ search_form.name }}
+        <button type="submit" class="dish-search-btn">
+          Search
+        </button>
+      </div>
+    </form>
     <div class="row g-4">
       {% for dish in dish_list %}
         <div class="col-lg-4 col-md-6">
@@ -38,7 +46,7 @@
                 ${{ dish.price }}
               </span>
               <a
-                href="{% url 'kitchen:dish-detail' dish.id %}"
+                href="{% url "kitchen:dish-detail" dish.id %}"
                 class="dish-details"
               >
                 View details →

@@ -974,3 +974,43 @@ body {
 .dish-cooks-header h2 {
   margin-bottom: 0;
 }
+.dish-search-form {
+  max-width: 520px;
+  margin: 20px auto 35px;
+}
+
+.dish-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dish-search input {
+  flex: 1;
+  height: 42px;
+  padding: 0 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.dish-search input:focus {
+  outline: none;
+  border-color: #9b6b43;
+}
+
+.dish-search-btn {
+  height: 42px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #9b6b43;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dish-search-btn:hover {
+  background-color: #70492d;
+}
