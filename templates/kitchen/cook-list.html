@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block content %}
-
   <div class="container dish-types-page">
     <div class="dish-types-header">
       <div>
@@ -17,49 +16,41 @@
           + Create Cook
       </a>
     </div>
-
+    <form method="get" class="dish-search-form">
+      <div class="dish-search">
+        {{ search_form.username }}
+        <button type="submit" class="dish-search-btn">
+          Search
+        </button>
+      </div>
+    </form>
     <div class="row g-4">
-
       {% for cook in cook_list %}
-
         <div class="col-lg-4 col-md-6">
           <div class="cook-card">
-
             <h2 class="cook-name">
               {{ cook.first_name }} {{ cook.last_name }}
             </h2>
-
             <p class="cook-username">
               @{{ cook.username }}
             </p>
-
             <hr>
-
             <div class="cook-experience">
               <span>Experience</span>
-
               <strong>
                 {{ cook.years_of_experience }} years
               </strong>
             </div>
-
             <a href="{% url "kitchen:cook-detail" cook.id %}" class="cook-details">
               View details →
             </a>
-
           </div>
         </div>
-
       {% empty %}
-
         <p class="text-center">
           There are no cooks yet.
         </p>
-
       {% endfor %}
-
     </div>
-
   </div>
-
 {% endblock %}

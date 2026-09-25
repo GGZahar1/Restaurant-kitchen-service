@@ -9,7 +9,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
-from kitchen.forms import DishForm, CookForm, DishSearchForm, DishTypeSearchForm
+from kitchen.forms import DishForm, CookForm, DishSearchForm, DishTypeSearchForm, CookSearchForm
 from kitchen.models import Dish, DishType, Cook
 
 
@@ -27,6 +27,23 @@ class CookListView(LoginRequiredMixin, generic.ListView):
     model = Cook
     paginate_by = 6
     template_name = "kitchen/cook-list.html"
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        username = self.request.GET.get("username", "")
+        context["search_form"] = CookSearchForm(
+            initial={"username": username}
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        form = CookSearchForm(self.request.GET)
+        if form.is_valid():
+            queryset = Cook.objects.filter(
+                username__icontains=form.cleaned_data["username"]
+            )
+        return queryset
 
 
 class CookDetailView(LoginRequiredMixin, generic.DetailView):
@@ -58,7 +75,7 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 6
     template_name = "kitchen/dish-type-list.html"
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, any]:
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
 
         name = self.request.GET.get("name", "")
