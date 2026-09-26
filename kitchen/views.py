@@ -4,12 +4,16 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import QuerySet
-from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
+from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
-from kitchen.forms import DishForm, CookForm, DishSearchForm, DishTypeSearchForm, CookSearchForm
+from kitchen.forms import (DishForm,
+                           CookForm,
+                           DishSearchForm,
+                           DishTypeSearchForm,
+                           CookSearchForm)
 from kitchen.models import Dish, DishType, Cook
 
 
@@ -153,7 +157,9 @@ class DishListView(LoginRequiredMixin, generic.ListView):
 class DishDetailView(LoginRequiredMixin, generic.DetailView):
     model = Dish
     template_name = "kitchen/dish-detail.html"
-    queryset = Dish.objects.select_related("dish_type").prefetch_related("cooks")
+    queryset = (Dish.objects
+                .select_related("dish_type")
+                .prefetch_related("cooks"))
 
 
 class DishCreateView(LoginRequiredMixin, generic.CreateView):

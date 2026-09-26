@@ -27,8 +27,18 @@ class PrivateDishTest(TestCase):
 
     def test_retrieve_dish_list(self):
         test_dish_type = DishType.objects.create(name="Test")
-        Dish.objects.create(name="TEST", price=Decimal("10.00"), description="TEST", dish_type=test_dish_type)
-        Dish.objects.create(name="Test2", price=Decimal("10.12"), description="ABC", dish_type=test_dish_type)
+        Dish.objects.create(
+            name="TEST",
+            price=Decimal("10.00"),
+            description="TEST",
+            dish_type=test_dish_type
+        )
+        Dish.objects.create(
+            name="Test2",
+            price=Decimal("10.12"),
+            description="ABC",
+            dish_type=test_dish_type
+        )
         response = self.client.get(DISH_URL)
         self.assertEqual(response.status_code, 200)
         dishes = Dish.objects.all()
@@ -56,7 +66,10 @@ class PrivateDishTypeTest(TestCase):
         response = self.client.get(DISHTYPE_URL)
         self.assertEqual(response.status_code, 200)
         dish_types = DishType.objects.all()
-        self.assertEqual(list(response.context["dishtype_list"]), list(dish_types))
+        self.assertEqual(
+            list(response.context["dishtype_list"]),
+            list(dish_types)
+        )
         self.assertTemplateUsed(response, "kitchen/dish-type-list.html")
 
 
@@ -75,8 +88,14 @@ class PrivateCookTest(TestCase):
         self.client.force_login(self.user)
 
     def test_retrieve_cook_list(self):
-        get_user_model().objects.create_user(username="testusername", password="TestPassword")
-        get_user_model().objects.create_user(username="testusername12", password="TestPassword1")
+        get_user_model().objects.create_user(
+            username="testusername",
+            password="TestPassword"
+        )
+        get_user_model().objects.create_user(
+            username="testusername12",
+            password="TestPassword1"
+        )
         response = self.client.get(COOK_URL)
         self.assertEqual(response.status_code, 200)
         cooks = get_user_model().objects.all()

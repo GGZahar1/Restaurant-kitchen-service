@@ -14,7 +14,8 @@ class Cook(AbstractUser):
     years_of_experience = models.PositiveIntegerField(default=0)
 
     def __str__(self) -> str:
-        return (f"{self.username} (first_name={self.first_name}, last_name={self.last_name},"
+        return (f"{self.username} (first_name={self.first_name},"
+                f" last_name={self.last_name},"
                 f" years_of_experience={self.years_of_experience})")
 
     def get_absolute_url(self):
@@ -29,4 +30,5 @@ class Dish(models.Model):
     cooks = models.ManyToManyField(Cook, related_name="dishes", blank=True)
 
     def __str__(self) -> str:
-        return f"{self.name} (price={self.price}, dish_type={self.dish_type.name})"
+        return (f"{self.name} (price={self.price},"
+                f" dish_type={self.dish_type.name})")

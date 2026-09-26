@@ -1,7 +1,6 @@
 from decimal import Decimal
 
 from django.contrib.auth import get_user_model
-from django.db.models import Model
 from django.test import TestCase
 
 from kitchen.models import Dish, DishType
@@ -16,7 +15,11 @@ class ModelsTest(TestCase):
             price=Decimal("12.22"),
             dish_type=test_dish_type
         )
-        self.assertEqual(str(dish), f"{dish.name} (price={dish.price}, dish_type={dish.dish_type.name})")
+        self.assertEqual(
+            str(dish),
+            f"{dish.name} (price={dish.price},"
+            f" dish_type={dish.dish_type.name})"
+        )
 
     def test_dish_type_str(self):
         dish_type = DishType.objects.create(name="Test")

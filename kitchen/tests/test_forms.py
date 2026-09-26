@@ -3,7 +3,7 @@ from decimal import Decimal
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
-from ..models import Cook, Dish, DishType
+from ..models import Dish, DishType
 
 from .test_views import COOK_URL, DISHTYPE_URL, DISH_URL
 
@@ -100,4 +100,7 @@ class TestDishTypeSearch(TestCase):
         dish_types = DishType.objects.filter(
             name__icontains="Main"
         )
-        self.assertEqual(list(response.context["dishtype_list"]), list(dish_types))
+        self.assertEqual(
+            list(response.context["dishtype_list"]),
+            list(dish_types)
+        )

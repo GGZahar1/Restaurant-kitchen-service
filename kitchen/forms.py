@@ -11,6 +11,7 @@ class DishForm(forms.ModelForm):
         widget=forms.CheckboxSelectMultiple,
         required=False
     )
+
     class Meta:
         model = Dish
         fields = "__all__"
