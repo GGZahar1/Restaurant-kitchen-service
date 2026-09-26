@@ -48,7 +48,7 @@ class CookListView(LoginRequiredMixin, generic.ListView):
 
 class CookDetailView(LoginRequiredMixin, generic.DetailView):
     model = Cook
-    queryset = Cook.objects.prefetch_related("dishes")
+    queryset = Cook.objects.prefetch_related("dishes__dish_type")
     template_name = "kitchen/cook-detail.html"
 
 
@@ -119,7 +119,7 @@ class DishTypeDishListView(LoginRequiredMixin, generic.ListView):
     template_name = "kitchen/dish-type-dish-list.html"
 
     def get_queryset(self) -> QuerySet:
-        return Dish.objects.filter(
+        return Dish.objects.select_related("dish_type").filter(
             dish_type_id=self.kwargs["pk"]
         )
 
@@ -144,7 +144,7 @@ class DishListView(LoginRequiredMixin, generic.ListView):
         queryset = super().get_queryset()
         form = DishSearchForm(self.request.GET)
         if form.is_valid():
-            queryset = Dish.objects.filter(
+            queryset = Dish.objects.select_related("dish_type").filter(
                 name__icontains=form.cleaned_data["name"]
             )
         return queryset
