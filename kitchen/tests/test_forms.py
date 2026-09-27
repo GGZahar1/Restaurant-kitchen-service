@@ -3,9 +3,9 @@ from decimal import Decimal
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 
-from ..models import Dish, DishType
+from kitchen.models import Dish, DishType
 
-from .test_views import COOK_URL, DISHTYPE_URL, DISH_URL
+from kitchen.tests.test_views import COOK_URL, DISHTYPE_URL, DISH_URL
 
 
 class TestCookSearch(TestCase):
