@@ -3,3 +3,4 @@
 __pycache__/
 *.ryc
 db.sqlite3
+.env
