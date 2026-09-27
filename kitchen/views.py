@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import QuerySet
 from django.http import HttpResponse, HttpRequest
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -17,14 +17,17 @@ from kitchen.forms import (DishForm,
 from kitchen.models import Dish, DishType, Cook
 
 
-@login_required
-def index(request: HttpRequest) -> HttpResponse:
-    context = {
-        "num_dish": Dish.objects.count(),
-        "num_dish_type": DishType.objects.count(),
-        "num_cooks": get_user_model().objects.count()
-    }
-    return render(request, "kitchen/index.html", context=context)
+class IndexView(LoginRequiredMixin, generic.TemplateView):
+    template_name = "kitchen/index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context["num_dishes"] = Dish.objects.count()
+        context["num_cooks"] = Cook.objects.count()
+        context["num_dish_types"] = DishType.objects.count()
+
+        return context
 
 
 class CookListView(LoginRequiredMixin, generic.ListView):
@@ -182,14 +185,12 @@ class DishDeleteView(LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy("kitchen:dish-list")
 
 
-@login_required
-def toggle_assign_to_dish(request, pk):
-    cook = request.user
-    dish = Dish.objects.get(id=pk)
-
-    if dish in cook.dishes.all():
-        cook.dishes.remove(dish)
-    else:
-        cook.dishes.add(dish)
-
-    return redirect("kitchen:dish-detail", pk=pk)
+class ToggleAssignToDishView(LoginRequiredMixin, generic.View):
+    def post(self, request, pk):
+        dish = get_object_or_404(Dish, pk=pk)
+        user = request.user
+        if user in dish.cooks.all():
+            dish.cooks.remove(user)
+        else:
+            dish.cooks.add(user)
+        return redirect("kitchen:dish-detail", pk=pk)

@@ -16,13 +16,13 @@ from .views import (
     DishTypeListView,
     DishTypeUpdateView,
     DishUpdateView,
-    index,
-    toggle_assign_to_dish,
+    ToggleAssignToDishView,
+    IndexView,
 )
 
 
 urlpatterns = [
-    path("", index, name="home"),
+    path("", IndexView.as_view(), name="home"),
     path("cooks/", CookListView.as_view(), name="cook-list"),
     path(
         "cooks/<int:pk>/",
@@ -46,7 +46,7 @@ urlpatterns = [
     ),
     path(
         "cooks/<int:pk>/toggle-assign-cook/",
-        toggle_assign_to_dish,
+        ToggleAssignToDishView.as_view(),
         name="cook-toggle-dish",
     ),
     path(
