@@ -11,6 +11,8 @@ DEBUG = False
 ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
 
+STATIC_ROOT = "staticfiles/"
+
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 

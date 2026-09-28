@@ -1,0 +1,530 @@
+[
+{
+    "model": "kitchen.dishtype",
+    "pk": 1,
+    "fields": {
+        "name": "Main Course"
+    }
+},
+{
+    "model": "kitchen.dishtype",
+    "pk": 2,
+    "fields": {
+        "name": "Appetizer"
+    }
+},
+{
+    "model": "kitchen.dishtype",
+    "pk": 3,
+    "fields": {
+        "name": "Soup"
+    }
+},
+{
+    "model": "kitchen.dishtype",
+    "pk": 4,
+    "fields": {
+        "name": "Dessert"
+    }
+},
+{
+    "model": "kitchen.dishtype",
+    "pk": 5,
+    "fields": {
+        "name": "Salad"
+    }
+},
+{
+    "model": "kitchen.dishtype",
+    "pk": 8,
+    "fields": {
+        "name": "Beverage"
+    }
+},
+{
+    "model": "kitchen.dishtype",
+    "pk": 9,
+    "fields": {
+        "name": "Seafood"
+    }
+},
+{
+    "model": "kitchen.cook",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$FTmuV6XMnLHIajOILXpRMM$b3xMdFr4SNE+5gE6lBph1lH8r1NQLIy5sZTMJ+/U4HY=",
+        "last_login": "2026-09-21T12:50:47.319Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-09-21T12:50:29.956Z",
+        "years_of_experience": 10,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "kitchen.cook",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$idfS7EZnIbvmA2OjS8d36m$tc8dWnmB5m3zy8R99+ntgFJT3pgO3RJnD35MNP9Z81Y=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "john_chef",
+        "first_name": "John",
+        "last_name": "Carter",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-09-21T15:40:15.004Z",
+        "years_of_experience": 7,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "kitchen.cook",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$yfJntgtZl0GERf0z6bDT42$V3cdQHbpbpAPkbGR0fblfe5GsJEwxjRGh1Rkt7Bo4Cs=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "emily_chef",
+        "first_name": "Emily",
+        "last_name": "Wilson",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-09-21T15:40:50.807Z",
+        "years_of_experience": 4,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "kitchen.cook",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$9oYxOhIc61Q2sDO1OE7dba$4X2DUzjw7DHNs+jcHHRQIDIFP0K66XdlEqluddXWdVs=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "marco_chef",
+        "first_name": "Macro",
+        "last_name": "Rossi",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-09-21T15:41:58.657Z",
+        "years_of_experience": 11,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "kitchen.cook",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$fVhXGkZuI7vWRnqlW3fHW9$TWM07zWA3a2fxQSDH16iA4SB2ZqpMVUdmHaV+4ZL4J0=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "anna_chef",
+        "first_name": "Anna",
+        "last_name": "Brown",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-09-21T15:42:29.163Z",
+        "years_of_experience": 3,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "kitchen.cook",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$ujynttCScdK9thN3sUO2dm$3ZOoKOUMCT/+zlMv5JfkvbJp19Y1rGGRC2mj5qQFrxc=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "david_chef",
+        "first_name": "David",
+        "last_name": "Miller",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-09-21T17:20:53.371Z",
+        "years_of_experience": 6,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "kitchen.cook",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$iGteGK5S5FwTnh7hyPcddb$aTm3xQwYWNoak0asZBdEMbkqweuIDFSd01zscVBVtSA=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "sophia_chef",
+        "first_name": "Sophia",
+        "last_name": "Lee",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-09-21T17:21:34.961Z",
+        "years_of_experience": 5,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "kitchen.cook",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$Me54O6kD8SJm9swFCoIGyV$Xqefp867QMJVTlxjwHYHzFae3mAF9b3zLCPpkUKasN4=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "daniel_chef",
+        "first_name": "Daniel",
+        "last_name": "Martin",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-09-21T17:22:25.783Z",
+        "years_of_experience": 8,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "kitchen.cook",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$1500000$IAG5r39qv9hE33h7b8SmFu$HpPvs3Q1YvZka3uyf9/wkO5tj7GeqJ7IerrQDBZxD64=",
+        "last_login": "2026-09-27T11:08:08.847Z",
+        "is_superuser": true,
+        "username": "user",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-09-24T15:36:40.427Z",
+        "years_of_experience": 10,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 1,
+    "fields": {
+        "name": "Grilled Salmon",
+        "description": "Fresh salmon fillet grilled to perfection and served with vegetables and lemon sauce.",
+        "price": "18.50",
+        "dish_type": 1,
+        "cooks": [
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 2,
+    "fields": {
+        "name": "Beef Steak",
+        "description": "Juicy grilled beef steak served with roasted potatoes and seasonal vegetables.",
+        "price": "24.90",
+        "dish_type": 1,
+        "cooks": [
+            8
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 3,
+    "fields": {
+        "name": "Chicken Steak",
+        "description": "Tender grilled chicken breast served with vegetables and creamy sauce.",
+        "price": "15.50",
+        "dish_type": 1,
+        "cooks": [
+            2,
+            4
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 4,
+    "fields": {
+        "name": "Caesar Salad",
+        "description": "Romaine lettuce with grilled chicken, Parmesan, croutons and Caesar dressing.",
+        "price": "10.50",
+        "dish_type": 5,
+        "cooks": [
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 5,
+    "fields": {
+        "name": "Tomato Soup",
+        "description": "Creamy tomato soup prepared with fresh tomatoes, herbs and cream.",
+        "price": "7.50",
+        "dish_type": 3,
+        "cooks": [
+            2
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 6,
+    "fields": {
+        "name": "Cheesecake",
+        "description": "Classic creamy cheesecake served with berry sauce and fresh berries.",
+        "price": "8.90",
+        "dish_type": 4,
+        "cooks": [
+            3
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 7,
+    "fields": {
+        "name": "Pasta Carbonara",
+        "description": "Italian pasta with bacon, Parmesan cheese, eggs and creamy sauce.",
+        "price": "13.90",
+        "dish_type": 1,
+        "cooks": [
+            2,
+            5,
+            9
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 8,
+    "fields": {
+        "name": "Margherita Pizza",
+        "description": "Italian pizza with tomato sauce, mozzarella and fresh basil.",
+        "price": "12.50",
+        "dish_type": 1,
+        "cooks": [
+            4
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 9,
+    "fields": {
+        "name": "Garlic Bread",
+        "description": "Crispy bread with garlic butter, herbs and melted cheese.",
+        "price": "5.50",
+        "dish_type": 2,
+        "cooks": [
+            2
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 10,
+    "fields": {
+        "name": "Chocolate Cake",
+        "description": "Rich chocolate cake with chocolate cream and fresh berries.",
+        "price": "8.50",
+        "dish_type": 4,
+        "cooks": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 11,
+    "fields": {
+        "name": "Mushroom Risotto",
+        "description": "Creamy Italian risotto with mushrooms, Parmesan cheese and fresh herbs.",
+        "price": "14.50",
+        "dish_type": 1,
+        "cooks": [
+            4,
+            7
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 12,
+    "fields": {
+        "name": "Greek Salad",
+        "description": "Fresh tomatoes, cucumbers, olives, red onion and feta cheese with olive oil.",
+        "price": "9.50",
+        "dish_type": 5,
+        "cooks": [
+            2,
+            7
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 13,
+    "fields": {
+        "name": "French Onion Soup",
+        "description": "Traditional onion soup topped with toasted bread and melted cheese.",
+        "price": "8.50",
+        "dish_type": 3,
+        "cooks": [
+            3,
+            5,
+            7
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 14,
+    "fields": {
+        "name": "Tiramisu",
+        "description": "Classic Italian dessert with mascarpone cream, coffee and cocoa.",
+        "price": "8.90",
+        "dish_type": 4,
+        "cooks": [
+            3,
+            8
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 15,
+    "fields": {
+        "name": "Bruschetta",
+        "description": "Toasted bread topped with fresh tomatoes, garlic, basil and olive oil.",
+        "price": "6.50",
+        "dish_type": 2,
+        "cooks": [
+            2,
+            4,
+            7
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 16,
+    "fields": {
+        "name": "Chicken Alfredo",
+        "description": "Creamy pasta with grilled chicken, Parmesan cheese, garlic and Alfredo sauce.",
+        "price": "14.90",
+        "dish_type": 1,
+        "cooks": [
+            4,
+            5
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 17,
+    "fields": {
+        "name": "Grilled Chicken",
+        "description": "Grilled chicken breast served with fresh vegetables and herb sauce.",
+        "price": "16.88",
+        "dish_type": 1,
+        "cooks": [
+            5,
+            6
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 18,
+    "fields": {
+        "name": "Grilled Beef",
+        "description": "Tender grilled beef served with roasted potatoes and vegetables.",
+        "price": "22.50",
+        "dish_type": 1,
+        "cooks": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 19,
+    "fields": {
+        "name": "Chicken Salad",
+        "description": "Fresh salad with grilled chicken, tomatoes, lettuce and house dressing.",
+        "price": "11.50",
+        "dish_type": 5,
+        "cooks": [
+            6,
+            7,
+            8
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 20,
+    "fields": {
+        "name": "Chicken Soup",
+        "description": "Light chicken soup with vegetables, herbs and homemade broth.",
+        "price": "8.49",
+        "dish_type": 3,
+        "cooks": [
+            5,
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 21,
+    "fields": {
+        "name": "Tomato Salad",
+        "description": "Fresh tomatoes with cucumber, red onion, herbs and olive oil.",
+        "price": "8.50",
+        "dish_type": 5,
+        "cooks": [
+            2,
+            9
+        ]
+    }
+},
+{
+    "model": "kitchen.dish",
+    "pk": 22,
+    "fields": {
+        "name": "Tomato Bruschetta",
+        "description": "Toasted bread topped with fresh tomatoes, garlic, basil and olive oil.",
+        "price": "7.50",
+        "dish_type": 2,
+        "cooks": [
+            5,
+            6
+        ]
+    }
+}
+]

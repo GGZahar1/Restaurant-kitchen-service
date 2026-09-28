@@ -16,3 +16,4 @@ python-dotenv==1.2.3
 pytokens==0.4.1
 sqlparse==0.6.0
 tzdata==2026.4
+whitenoise==6.12.0
