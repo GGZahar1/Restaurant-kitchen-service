@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Logout
+{% endblock %}
+
+{% block content %}
+  <div class="container auth-page">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1>Logged out</h1>
+        <p>You have successfully logged out of your account.</p>
+      </div>
+      <a
+        href="{% url "login" %}"
+        class="btn auth-submit"
+      >
+        Login again
+      </a>
+      <a
+        href="{% url "kitchen:home" %}"
+        class="auth-home-link"
+      >
+        Back to home
+      </a>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,1016 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #f5f1eb;
+  color: #222;
+}
+
+
+/* Navbar */
+
+.main-navbar {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 90%;
+  z-index: 10;
+
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+
+  padding: 8px 25px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.main-navbar .nav-link {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: color 0.2s ease;
+}
+
+.main-navbar .nav-link:hover {
+  color: #9b6b43;
+}
+
+
+/* Home page */
+
+.hero {
+  min-height: 650px;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.38),
+      rgba(0, 0, 0, 0.38)
+    ),
+    url("../images/restaurant.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+
+  margin-bottom: 12px;
+}
+
+.hero-content p {
+  font-size: 17px;
+  font-weight: 400;
+
+  margin: 0;
+  opacity: 0.9;
+}
+
+
+/* Statistics */
+
+.statistics {
+  max-width: 900px;
+
+  margin: -60px auto 50px;
+
+  position: relative;
+  z-index: 5;
+
+  background-color: #fff;
+
+  border-radius: 16px;
+
+  padding: 30px;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 15px 30px;
+}
+
+.stat-item:not(:last-child) {
+  border-right: 1px solid #e5e5e5;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 700;
+
+  color: #9b6b43;
+
+  margin-bottom: 5px;
+}
+
+.stat-title {
+  font-size: 17px;
+  font-weight: 600;
+
+  margin-bottom: 10px;
+}
+
+.stat-description {
+  color: #777;
+  font-size: 13px;
+  line-height: 1.6;
+
+  margin-bottom: 0;
+}
+/* Cooks page */
+
+.cooks-page {
+  padding-top: 130px;
+  padding-bottom: 30px;
+}
+
+.cooks-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cooks-header h1 {
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.cooks-header p {
+  color: #777;
+  font-size: 16px;
+}
+
+
+/* Cook cards */
+
+.cook-card {
+  height: 100%;
+  background-color: #ffffff;
+
+  padding: 30px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition: 0.2s ease;
+}
+
+.cook-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.cook-name {
+  font-size: 23px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.cook-username {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.cook-card hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin-bottom: 25px;
+}
+
+
+/* Experience */
+
+.cook-experience {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 30px;
+}
+
+.cook-experience span {
+  color: #777;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.cook-experience strong {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+/* View details */
+
+.cook-details {
+  color: #9b6b43;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.cook-details:hover {
+  color: #70492d;
+}
+
+/* Dish Types page */
+
+.dish-types-page {
+  padding-top: 130px;
+  padding-bottom: 30px;
+}
+
+.dish-types-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dish-types-header h1 {
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.dish-types-header p {
+  color: #777;
+  font-size: 16px;
+}
+
+
+/* Dish Type card */
+
+.dish-type-card {
+  height: 160px;
+
+  background-color: #fff;
+  border-radius: 16px;
+
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition: 0.2s ease;
+}
+
+.dish-type-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.dish-type-card h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dish-type-details {
+  color: #9b6b43;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.dish-type-details:hover {
+  color: #70492d;
+}
+
+
+/* Dishes page */
+
+.dishes-page {
+  padding-top: 130px;
+  padding-bottom: 30px;
+}
+
+.dishes-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.create-dish-btn {
+  position: absolute;
+  right: 0;
+  top: 10px;
+
+  background-color: #9b6b43;
+  color: #fff;
+
+  padding: 9px 16px;
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.create-dish-btn:hover {
+  background-color: #70492d;
+  color: #fff;
+}
+
+.dishes-header h1 {
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.dishes-header p {
+  color: #777;
+  font-size: 16px;
+}
+
+
+/* Dish card */
+
+.dish-card {
+  height: 100%;
+  min-height: 250px;
+
+  background-color: #fff;
+  border-radius: 16px;
+
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition: 0.2s ease;
+}
+
+.dish-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.dish-type {
+  color: #9b6b43;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.dish-name {
+  font-size: 23px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.dish-description {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.dish-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 18px;
+  border-top: 1px solid #eee;
+}
+
+.dish-price {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.dish-details {
+  color: #9b6b43;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dish-details:hover {
+  color: #70492d;
+}
+
+/* Dish Detail */
+
+.dish-detail-page {
+  padding-top: 140px;
+  padding-bottom: 60px;
+  max-width: 900px;
+}
+
+.dish-detail-card {
+  background-color: #fff;
+  border-radius: 18px;
+  padding: 40px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dish-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.dish-detail-type {
+  color: #9b6b43;
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+.dish-detail-header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -1px;
+
+  margin: 0;
+}
+
+.dish-detail-price {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.dish-detail-section {
+  padding: 25px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.dish-detail-section h2 {
+  font-size: 17px;
+  font-weight: 600;
+
+  margin-bottom: 12px;
+}
+
+.dish-detail-section p {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* Cooks */
+
+.dish-cooks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dish-cook {
+  background-color: #f5f1eb;
+  color: #333;
+
+  padding: 8px 14px;
+  border-radius: 20px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.dish-cook:hover {
+  color: #9b6b43;
+}
+
+
+/* Actions */
+
+.dish-detail-actions {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 25px;
+}
+
+/* Cook Detail */
+
+.cook-detail-page {
+  padding-top: 140px;
+  padding-bottom: 60px;
+  max-width: 900px;
+}
+
+.cook-detail-card {
+  background-color: #fff;
+  border-radius: 18px;
+  padding: 40px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.cook-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee;
+}
+
+.cook-detail-username {
+  color: #9b6b43;
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+.cook-detail-header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -1px;
+
+  margin: 0;
+}
+
+.cook-detail-experience {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.cook-detail-experience span {
+  color: #777;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.cook-detail-experience strong {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+/* Dishes */
+
+.cook-detail-section {
+  padding: 25px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cook-detail-section h2 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.cook-dishes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cook-dish {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: #f5f1eb;
+
+  padding: 14px 18px;
+  border-radius: 12px;
+
+  color: #333;
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.cook-dish:hover {
+  transform: translateX(4px);
+  color: #9b6b43;
+}
+
+.cook-dish div {
+  display: flex;
+  flex-direction: column;
+}
+
+.cook-dish strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.cook-dish div span {
+  color: #777;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.cook-dish-price {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+/* Actions */
+
+.cook-detail-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 25px;
+}
+
+/* Dish Form */
+
+.dish-form-page {
+  max-width: 700px;
+  padding-top: 130px;
+  padding-bottom: 50px;
+}
+
+.dish-form-card {
+  background-color: #fff;
+  border-radius: 18px;
+  padding: 35px 40px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dish-form-header {
+  margin-bottom: 25px;
+}
+
+.dish-form-header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.dish-form-header p {
+  color: #777;
+  font-size: 14px;
+  margin: 0;
+}
+
+
+/* Form */
+
+.dish-form-card form p {
+  margin-bottom: 18px;
+}
+
+.dish-form-card label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.dish-form-card input,
+.dish-form-card textarea,
+.dish-form-card select {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+.dish-form-card textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.dish-form-card input:focus,
+.dish-form-card textarea:focus,
+.dish-form-card select:focus {
+  outline: none;
+  border-color: #9b6b43;
+}
+
+
+/* Actions */
+
+.dish-form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 30px;
+}
+
+.dish-submit {
+  background-color: #9b6b43;
+  color: #fff;
+}
+
+.dish-submit:hover {
+  background-color: #70492d;
+  color: #fff;
+}
+
+.dish-form-card #id_cooks div {
+  margin-bottom: 10px;
+}
+
+.dish-form-card #id_cooks label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.dish-form-card #id_cooks div {
+  margin-bottom: 10px;
+}
+
+.dish-form-card #id_cooks label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.dish-form-card #id_cooks input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+/* Delete Dish */
+
+.delete-page {
+  max-width: 650px;
+  padding-top: 160px;
+}
+
+.delete-card {
+  background-color: #fff;
+  border-radius: 18px;
+  padding: 40px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.delete-card h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.delete-card p {
+  color: #777;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.delete-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-dish-type-btn {
+  position: absolute;
+  right: 0;
+  top: 10px;
+
+  background-color: #9b6b43;
+  color: #fff;
+
+  padding: 9px 16px;
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.create-dish-type-btn:hover {
+  background-color: #70492d;
+  color: #fff;
+}
+
+.dish-type-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dish-type-manage {
+  display: flex;
+  gap: 12px;
+}
+
+.dish-type-update,
+.dish-type-delete {
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dish-type-update {
+  color: #9b6b43;
+}
+
+.dish-type-update:hover {
+  color: #70492d;
+}
+
+.dish-type-delete {
+  color: #c65353;
+}
+
+.dish-type-delete:hover {
+  color: #963b3b;
+}
+
+.auth-page {
+  max-width: 520px;
+  padding-top: 160px;
+  padding-bottom: 60px;
+}
+
+.auth-card {
+  background-color: #fff;
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.auth-header p {
+  color: #777;
+  font-size: 14px;
+  margin: 0;
+}
+
+.auth-field {
+  margin-bottom: 20px;
+}
+
+.auth-field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.auth-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.auth-field input:focus {
+  outline: none;
+  border-color: #9b6b43;
+}
+
+.auth-submit {
+  width: 100%;
+  background-color: #9b6b43;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.auth-submit:hover {
+  background-color: #70492d;
+  color: #fff;
+}
+
+.auth-home-link {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  color: #777;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.auth-home-link:hover {
+  color: #9b6b43;
+}
+
+.account-name {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 1px solid #ddd;
+}
+
+.account-name .nav-link {
+  color: #9b6b43;
+  font-weight: 600;
+}
+
+.logout-btn {
+  border: 0;
+  background: none;
+  color: #777 !important;
+}
+
+.logout-btn:hover {
+  color: #9b6b43 !important;
+}
+
+.dish-cooks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.dish-cooks-header h2 {
+  margin-bottom: 0;
+}
+.dish-search-form {
+  max-width: 520px;
+  margin: 20px auto 35px;
+}
+
+.dish-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dish-search input {
+  flex: 1;
+  height: 42px;
+  padding: 0 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.dish-search input:focus {
+  outline: none;
+  border-color: #9b6b43;
+}
+
+.dish-search-btn {
+  height: 42px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #9b6b43;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dish-search-btn:hover {
+  background-color: #70492d;
+}

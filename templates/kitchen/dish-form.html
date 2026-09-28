@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {% if object %}Update Dish{% else %}Create Dish{% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="container dish-form-page">
+    <div class="dish-form-card">
+      <div class="dish-form-header">
+        <h1>
+          {% if object %}Update Dish{% else %}Create Dish{% endif %}
+        </h1>
+        <p>
+          {% if object %}
+            Update dish information
+          {% else %}
+            Add a new dish to the menu
+          {% endif %}
+        </p>
+      </div>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="dish-form-actions">
+          <a
+            href="{% url 'kitchen:dish-list' %}"
+            class="btn btn-outline-secondary"
+          >
+            Cancel
+          </a>
+          <button type="submit" class="btn dish-submit">
+            {% if object %}Save changes{% else %}Create Dish{% endif %}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

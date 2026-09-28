@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Delete Dish
+{% endblock %}
+
+{% block content %}
+  <div class="container delete-page">
+    <div class="delete-card">
+      <h1>Delete Dish Type</h1>
+      {% if dishtype.dish_set.exists %}
+        <p>
+          You cannot delete
+          <strong>"{{ dishtype.name }}"</strong>
+          because it has associated dishes.
+        </p>
+        <div class="delete-actions">
+          <a
+            href="{% url "kitchen:dish-type-list" %}"
+            class="btn btn-outline-secondary">
+            Back
+          </a>
+        </div>
+
+      {% else %}
+        <p>
+          Are you sure you want to delete
+          <strong>"{{ dishtype.name }}"</strong>?
+        </p>
+
+        <form method="post">
+          {% csrf_token %}
+          <div class="delete-actions">
+            <a
+              href="{% url "kitchen:dish-type-list" %}"
+              class="btn btn-outline-secondary"
+            >
+              Cancel
+            </a>
+            <button type="submit" class="btn btn-danger">
+              Delete
+            </button>
+          </div>
+        </form>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

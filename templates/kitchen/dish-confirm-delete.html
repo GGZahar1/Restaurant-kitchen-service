@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Delete Dish
+{% endblock %}
+
+{% block content %}
+
+  <div class="container delete-page">
+
+    <div class="delete-card">
+
+      <h1>Delete Dish</h1>
+
+      <p>
+        Are you sure you want to delete
+        <strong>"{{ dish.name }}"</strong>?
+      </p>
+
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="delete-actions">
+
+          <a
+            href="{% url 'kitchen:dish-detail' pk=dish.pk %}"
+            class="btn btn-outline-secondary"
+          >
+            Cancel
+          </a>
+
+          <button type="submit" class="btn btn-danger">
+            Delete
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+{% endblock %}

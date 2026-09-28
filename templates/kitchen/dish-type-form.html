@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {% if object %}Update Dish Type{% else %}Create Dish Type{% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="container dish-form-page">
+    <div class="dish-form-card">
+      <div class="dish-form-header">
+        <h1>
+          {% if object %}Update Dish Type{% else %}Create Dish Type{% endif %}
+        </h1>
+        <p>
+          {% if object %}
+            Update Dish Type name
+          {% else %}
+            Add a new Dish Type
+          {% endif %}
+        </p>
+      </div>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="dish-form-actions">
+          <a
+            href="{% url "kitchen:dish-type-list" %}"
+            class="btn btn-outline-secondary"
+          >
+            Cancel
+          </a>
+          <button type="submit" class="btn dish-submit">
+            {% if object %}Save changes{% else %}Create Dish Type{% endif %}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
