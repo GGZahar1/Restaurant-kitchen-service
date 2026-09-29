@@ -46,3 +46,5 @@ You can use the following account to log in:
 - username: user
 - password: user123@
 
+## Link to deployed project
+https://restaurant-kitchen-service-pwza.onrender.com
