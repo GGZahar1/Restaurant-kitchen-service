@@ -16,7 +16,7 @@ if RENDER_EXTERNAL_HOSTNAME:
    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
-STATIC_ROOT = "staticfiles/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
